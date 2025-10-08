@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Group Information - Web Development Team</title>
+    <link rel="stylesheet" href="default.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Web Development Team</h1>
+            <p class="subtitle">Group Information Portal</p>
+        </header>
+
+        <main>
+            <section class="group-photo-section">
+                <h2>Group Photo</h2>
+                <div class="photo-container">
+                    <div class="image-with-overlay">
+                        <img src="images/members.jpg" alt="Group Photo" class="group-photo" width="2048" height="1602">
+                        <svg class="image-overlay" viewBox="0 0 2048 1602" preserveAspectRatio="none">
+                            <circle cx="961" cy="527" r="150" fill="transparent" stroke="transparent"
+                                class="clickable-area" data-href="members/20120450/20120450.html"
+                                data-title="Member 1 - Click to view details">
+
+                            </circle>
+                            <circle cx="615" cy="527" r="150" fill="transparent" stroke="transparent"
+                                class="clickable-area" data-href="members/23120256/23120256.html"
+                                data-title="Member 2 - Click to view details">
+
+                            </circle>
+                            <circle cx="1366" cy="539" r="150" fill="transparent" stroke="transparent"
+                                class="clickable-area" data-href="members/23122056/23122056.html"
+                                data-title="Member 3 - Click to view details">
+
+                            </circle>
+                        </svg>
+                    </div>
+                    <p class="photo-instruction">Click on any member's face to view their detailed information</p>
+            </section>
+
+            <section class="group-info">
+                <h2>Group Details</h2>
+                <div class="info-grid">
+                    <div class="info-item">
+                        <h3>Group Name</h3>
+                        <p>No Name</p>
+                    </div>
+                    <div class="info-item">
+                        <h3>Project</h3>
+                        <p>Group Info</p>
+                    </div>
+                    <div class="info-item">
+                        <h3>Total Members</h3>
+                        <p>3</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="members-list">
+                <h2>Team Members</h2>
+                <div class="members-grid">
+                    <div class="member-card">
+                        <img src="members/20120450/images/20120450.jpg" alt="Member 1" class="member-thumbnail">
+                        <div class="member-info">
+                            <h3>Phạm Hữu Đan</h3>
+                            <p>Student ID: 20120450</p>
+                            <a href="members/20120450/20120450.html" class="view-profile-btn">View Profile</a>
+                        </div>
+                    </div>
+                    <div class="member-card">
+                        <img src="members/23120256/images/23120256.jpg" alt="Member 2" class="member-thumbnail">
+                        <div class="member-info">
+                            <h3>Trần Đại Hiệp</h3>
+                            <p>Student ID: 23120256</p>
+                            <a href="members/23120256/23120256.html" class="view-profile-btn">View Profile</a>
+                        </div>
+                    </div>
+                    <div class="member-card">
+                        <img src="members/23122056/images/23122056.jpg" alt="Member 3" class="member-thumbnail">
+                        <div class="member-info">
+                            <h3>Lâm Hoàng Vũ</h3>
+                            <p>Student ID: 23122056</p>
+                            <a href="members/23122056/23122056.html" class="view-profile-btn">View Profile</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2024 Web Development Team. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        // Handle SVG clickable areas
+        document.addEventListener('DOMContentLoaded', function () {
+            const clickableAreas = document.querySelectorAll('.clickable-area');
+
+            clickableAreas.forEach(area => {
+                area.addEventListener('click', function () {
+                    const href = this.getAttribute('data-href');
+                    if (href) {
+                        window.location.href = href;
+                    }
+                });
+
+                area.addEventListener('mouseenter', function () {
+                    this.style.fill = 'rgba(102, 126, 234, 0.1)';
+                    this.style.stroke = '#667eea';
+                    this.style.strokeWidth = '2';
+                });
+
+                area.addEventListener('mouseleave', function () {
+                    this.style.fill = 'transparent';
+                    this.style.stroke = 'transparent';
+                    this.style.strokeWidth = '0';
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
